@@ -26,8 +26,12 @@
             </div>
         </header>
         <main class="container">
-            <div class="row">
-                <div class="col-6 mx-auto border border-3 border-info shadow">
+            <div class="row flex-column">
+                <div class="input-group mb-3 w-50 mx-auto">
+                    <input type="text" class="form-control" placeholder="Cose da aggiungere...">
+                    <button class="btn btn-outline-success" type="button">Aggiungi</button>
+                </div>
+                <div class="col-6 mx-auto border border-3 border-info shadow p-5">
                     <h2 v-if="!list.length" class="text-center text-danger my-auto">La Lista è vuota!</h2>
                     <ul v-else class="list-group">
                         <li v-for="(element, index) in list" class="list-group-item d-flex justify-content-between m-1">

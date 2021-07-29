@@ -5,6 +5,7 @@ Vue.config.devtools = true;
 const root = new Vue({
     el: "#app",
     data: {
+        author: 'Forklein',
         newItem: '',
         list: [
             "Seguire Boolean",

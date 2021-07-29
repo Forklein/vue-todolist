@@ -29,8 +29,8 @@
             <div class="row">
                 <div class="col-6 mx-auto border border-3 border-info shadow">
                     <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between">
-                            Cose da fare
+                        <li v-for="(element, index) in list" class="list-group-item d-flex justify-content-between m-1">
+                            {{ element }}
                             <button type="button" class="btn-close" aria-label="Close"></button>
                         </li>
                     </ul>

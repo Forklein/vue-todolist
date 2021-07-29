@@ -12,7 +12,11 @@ const root = new Vue({
             "Dormire",
         ],
     },
-    methods: {},
+    methods: {
+        deleteList(index) {
+            this.list.splice(index, 1);
+        }
+    },
 });
 
 

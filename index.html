@@ -28,12 +28,14 @@
         <main class="container">
             <div class="row flex-column">
                 <div class="input-group mb-3 w-50 mx-auto">
-                    <input type="text" class="form-control" placeholder="Cose da aggiungere...">
-                    <button class="btn btn-outline-success" type="button">Aggiungi</button>
+                    <input v-model="newItem" type="text" class="form-control" placeholder="Cose da aggiungere...">
+                    <button @click="addList" class="btn btn-outline-success" type="button">Aggiungi</button>
                 </div>
-                <div class="col-6 mx-auto border border-3 border-info shadow p-5">
+                <div class="col-6 mx-auto border border-2 border-info shadow p-5">
                     <h2 v-if="!list.length" class="text-center text-danger my-auto">La Lista è vuota!</h2>
-                    <ul v-else class="list-group">
+                    <h2 v-else-if="list.length === 10" class="text-center text-success m-3">La Lista è completa!
+                    </h2>
+                    <ul class="list-group">
                         <li v-for="(element, index) in list" class="list-group-item d-flex justify-content-between m-1">
                             {{ element }}
                             <button type="button" @click="deleteList(index)" class="btn-close"

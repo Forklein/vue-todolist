@@ -29,9 +29,9 @@
             <div class="row flex-column">
                 <div class="col-4 d-flex flex-column col-md-6 input-group m-3 w-50 mx-auto">
                     <input v-model="newItem" type="text" class="form-control w-100 m-2"
-                        placeholder="Cose da aggiungere...">
-                    <button @click="addList" class="mx-auto btn border-2 rounded-2 btn-outline-success w-50"
-                        type="button">Aggiungi</button>
+                        placeholder="Cose da aggiungere..." style="min-width: 150px;">
+                    <button id="btn" @click="addList" class="mx-auto btn border-2 rounded-2 btn-outline-success w-50"
+                        type="button" style="min-width: 100px;">Aggiungi</button>
                 </div>
                 <div class="col-8 col-md-6 mx-auto border border-2 border-info shadow p-5">
                     <h2 v-if="!list.length" class="text-center text-danger my-auto">La Lista è vuota!</h2>
@@ -41,7 +41,7 @@
                         <li v-for="(element, index) in list"
                             class="list-group-item d-flex flex-column-reverse align-items-center text-center d-md-flex flex-md-row justify-content-md-between m-2">
                             <p class="my-auto">{{ element }}</p>
-                            <button id="btn" type="button" @click="deleteList(index)" class="btn-close"></button>
+                            <button type="button" @click="deleteList(index)" class="btn-close"></button>
                         </li>
                     </ul>
                 </div>

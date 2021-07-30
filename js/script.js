@@ -28,9 +28,15 @@ const root = new Vue({
         },
         toggleInput() {
             this.isViewAdd = !this.isViewAdd;
+            if (this.isViewAdd) {
+                this.isViewSearch = false;
+            }
         },
         toggleSearch() {
             this.isViewSearch = !this.isViewSearch;
+            if (this.isViewSearch) {
+                this.isViewAdd = false;
+            }
         },
     },
 });

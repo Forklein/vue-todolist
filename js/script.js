@@ -26,6 +26,9 @@ const root = new Vue({
                 this.newItem = '';
             }
         },
+        resetList() {
+            this.list.splice(0, this.list.length);
+        },
         toggleInput() {
             this.isViewAdd = !this.isViewAdd;
             if (this.isViewAdd) {

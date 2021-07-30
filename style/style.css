@@ -4,6 +4,7 @@ body{
 
 li{
     animation: fadeIn 1s linear;
+    cursor: pointer;
 }
 
 h1{

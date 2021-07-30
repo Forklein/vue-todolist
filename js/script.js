@@ -12,6 +12,7 @@ const root = new Vue({
         backgroundColor: 'dark-mode',
         defaultColor: 'text-white',
         mode: 'Light',
+        decoration: '',
         newItem: '',
         searchItem: '',
         list: [
@@ -66,5 +67,13 @@ const root = new Vue({
             el = el.toLowerCase();
             return el.includes(filter);
         },
-    }
+        toggleDec(index) {
+            console.log(index)
+            this.list.forEach((item, i) => {
+                if (index === i) {
+                    this.decoration = 'text-decoration-line-through';
+                }
+            });
+        },
+    },
 });

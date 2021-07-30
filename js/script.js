@@ -8,6 +8,7 @@ const root = new Vue({
         author: 'Forklein',
         isViewAdd: false,
         isViewSearch: false,
+        reset: false,
         newItem: '',
         list: [
             "Seguire Boolean",
@@ -28,6 +29,7 @@ const root = new Vue({
         },
         resetList() {
             this.list.splice(0, this.list.length);
+            this.reset = true;
         },
         toggleInput() {
             this.isViewAdd = !this.isViewAdd;

@@ -66,7 +66,8 @@
                 </div>
                 <div class="col-8 col-md-6 mx-auto border border-2 border-secondary shadow p-3">
                     <h3 class="text-white">Totale: {{ list.length }}</h3>
-                    <h2 v-if="!list.length" class="text-danger my-auto">La Lista è vuota!</h2>
+                    <h2 v-if="reset && !list.length" class="text-danger">Reset Successfully!</h2>
+                    <h2 v-if="!list.length" class="text-info my-auto">La Lista è vuota!</h2>
                     <h2 v-else-if="list.length === 10" class="text-danger m-3">La Lista è completa!
                     </h2>
                     <ul class="list-group">

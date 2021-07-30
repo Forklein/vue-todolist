@@ -9,6 +9,9 @@ const root = new Vue({
         isViewAdd: false,
         isViewSearch: false,
         reset: false,
+        backgroundColor: 'dark-mode',
+        defaultColor: 'text-white',
+        mode: 'Light',
         newItem: '',
         list: [
             "Seguire Boolean",
@@ -43,8 +46,16 @@ const root = new Vue({
                 this.isViewAdd = false;
             }
         },
+        darkMode() {
+            if (this.backgroundColor === 'light-mode') {
+                this.backgroundColor = 'dark-mode';
+                this.mode = 'Light';
+                this.defaultColor = 'text-white';
+            } else {
+                this.backgroundColor = 'light-mode';
+                this.mode = 'Dark';
+                this.defaultColor = '';
+            }
+        },
     },
 });
-
-
-

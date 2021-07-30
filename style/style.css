@@ -1,6 +1,5 @@
 body{
     font-family: sans-serif;
-    background-color: rgb(70, 70, 70);
 }
 
 li{
@@ -15,6 +14,14 @@ h1{
 
 .bg-header{
     background-color: #001632;
+}
+
+.dark-mode{
+    background-color: rgb(70, 70, 70);;
+}
+
+.light-mode{
+    background-color: #fff;
 }
 
 @keyframes fadeIn {

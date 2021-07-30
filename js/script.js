@@ -13,6 +13,7 @@ const root = new Vue({
         defaultColor: 'text-white',
         mode: 'Light',
         newItem: '',
+        searchItem: '',
         list: [
             "Seguire Boolean",
             "Fare la spesa",
@@ -57,5 +58,13 @@ const root = new Vue({
                 this.defaultColor = '';
             }
         },
-    },
+        showItem(el) {
+            if (!this.searchItem || this.searchItem.trim() === '') {
+                return true;
+            }
+            const filter = this.searchItem.trim().toLowerCase();
+            el = el.toLowerCase();
+            return el.includes(filter);
+        },
+    }
 });

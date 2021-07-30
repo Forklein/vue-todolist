@@ -6,7 +6,8 @@ const root = new Vue({
     el: "#app",
     data: {
         author: 'Forklein',
-        isView: false,
+        isViewAdd: false,
+        isViewSearch: false,
         newItem: '',
         list: [
             "Seguire Boolean",
@@ -26,8 +27,11 @@ const root = new Vue({
             }
         },
         toggleInput() {
-            this.isView = !this.isView;
-        }
+            this.isViewAdd = !this.isViewAdd;
+        },
+        toggleSearch() {
+            this.isViewSearch = !this.isViewSearch;
+        },
     },
 });
 

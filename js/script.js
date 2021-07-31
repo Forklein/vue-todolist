@@ -82,7 +82,7 @@ const root = new Vue({
         toggleDone(i) {
             const newList = this.list.map((element, index) => {
                 if (index === i) {
-                    element.done = !element.done
+                    element.done = !element.done;
                 }
                 return element;
             });
@@ -90,6 +90,20 @@ const root = new Vue({
         },
         isDone(index) {
             return this.list[index].done;
-        }
+        },
+        allDone() {
+            const allDone = this.list.map((element, index) => {
+                element.done = true;
+                return element;
+            });
+            this.list = allDone;
+        },
+        allNoDone() {
+            const allNoDone = this.list.map((element, index) => {
+                element.done = false;
+                return element;
+            });
+            this.list = allNoDone;
+        },
     },
 });

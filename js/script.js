@@ -54,6 +54,7 @@ const root = new Vue({
             }
         },
         toggleSearch() {
+            this.searchItem = ''
             this.isViewSearch = !this.isViewSearch;
             if (this.isViewSearch) {
                 this.isViewAdd = false;

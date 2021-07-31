@@ -12,14 +12,25 @@ const root = new Vue({
         backgroundColor: 'dark-mode',
         defaultColor: 'text-white',
         mode: 'Light',
-        decoration: '',
         newItem: '',
         searchItem: '',
         list: [
-            "Seguire Boolean",
-            "Fare la spesa",
-            "Uscire",
-            "Dormire",
+            {
+                text: 'Seguire Boolean',
+                done: false,
+            },
+            {
+                text: 'Fare la spesa',
+                done: false,
+            },
+            {
+                text: 'Allenamento',
+                done: false,
+            },
+            {
+                text: 'Uscire',
+                done: false,
+            },
         ],
     },
     methods: {
@@ -28,7 +39,7 @@ const root = new Vue({
         },
         addList() {
             if (this.newItem.trim() !== '' && this.list.length < 10) {
-                this.list.push(this.newItem);
+                this.list.push({ text: this.newItem, done: false });
                 this.newItem = '';
             }
         },
@@ -67,13 +78,17 @@ const root = new Vue({
             el = el.toLowerCase();
             return el.includes(filter);
         },
-        toggleDec(index) {
-            console.log(index)
-            this.list.forEach((item, i) => {
+        toggleDone(i) {
+            const newList = this.list.map((element, index) => {
                 if (index === i) {
-                    this.decoration = 'text-decoration-line-through';
+                    element.done = !element.done
                 }
+                return element;
             });
+            this.list = newList;
         },
+        isDone(index) {
+            return this.list[index].done;
+        }
     },
 });

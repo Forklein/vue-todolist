@@ -12,6 +12,7 @@ const root = new Vue({
         backgroundColor: 'dark-mode',
         defaultColor: 'text-white',
         mode: 'Light',
+        modeIcon: true,
         newItem: '',
         searchItem: '',
         list: [
@@ -65,10 +66,12 @@ const root = new Vue({
                 this.backgroundColor = 'dark-mode';
                 this.mode = 'Light';
                 this.defaultColor = 'text-white';
+                this.modeIcon = !this.modeIcon;
             } else {
                 this.backgroundColor = 'light-mode';
                 this.mode = 'Dark';
                 this.defaultColor = '';
+                this.modeIcon = !this.modeIcon;
             }
         },
         showItem(el) {
